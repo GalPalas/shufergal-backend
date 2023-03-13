@@ -8,7 +8,8 @@ import categories from "../routes/category";
 import orders from "../routes/order";
 import paypal from "../routes/paypal";
 
-dotenv.config();
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+
 const startup = (app: Application) => {
   app.use(express.json());
   app.use("/api/users", user);
