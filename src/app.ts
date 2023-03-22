@@ -1,7 +1,10 @@
+import * as dotenv from "dotenv";
 import express, { Application } from "express";
 import cors from "cors";
 import startDB from "./start/db";
 import startup from "./start/routes";
+
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
 
 const app: Application = express();
 
