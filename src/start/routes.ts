@@ -1,4 +1,3 @@
-import * as dotenv from "dotenv";
 import express, { Application } from "express";
 import user from "../routes/user";
 import auth from "../routes/auth";
@@ -8,7 +7,7 @@ import categories from "../routes/category";
 import orders from "../routes/order";
 import paypal from "../routes/paypal";
 
-dotenv.config({ path: `.env.${process.env.NODE_ENV}` });
+console.log(process.env.DATABASE_NAME);
 
 const startup = (app: Application) => {
   app.use(express.json());
